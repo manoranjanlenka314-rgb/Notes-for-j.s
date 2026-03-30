@@ -1,0 +1,118 @@
+Long Summary of JavaScript
+JavaScript (JS) is a high-level, interpreted programming language primarily used to make web pages interactive. It was created in 1995 by Brendan Eich at Netscape and has since become one of the core technologies of the web, alongside HTML and CSS. Unlike HTML (structure) and CSS (style), JavaScript adds behavior—it allows developers to manipulate the DOM (Document Object Model), respond to user actions, and dynamically update content without reloading the page.
+
+Key Features
+Interpreted & Dynamic: Runs directly in browsers without compilation; variables can hold different types at runtime.
+
+Event-driven: Handles user actions like clicks, keypresses, and form submissions.
+
+Prototype-based OOP: Uses prototypes instead of classical inheritance, though ES6 introduced class syntax for readability.
+
+Single-threaded with concurrency: Uses the event loop and asynchronous programming (callbacks, promises, async/await) to handle tasks without blocking.
+
+Cross-platform: Runs in all major browsers and environments like Node.js for server-side development.
+
+Core Concepts
+Variables: Declared using var, let, and const. let and const are block-scoped, while var is function-scoped.
+
+Data Types: Includes primitive types (string, number, boolean, null, undefined, symbol, bigint) and objects.
+
+Functions: First-class citizens—can be passed as arguments, returned, or stored in variables.
+
+DOM Manipulation: Methods like getElementById, querySelector, and innerHTML allow dynamic updates.
+
+Events: Handled via addEventListener.
+
+ES6+ Features: Arrow functions, template literals, destructuring, modules, promises, async/await.
+
+Security Awareness: JS can be exploited (e.g., XSS attacks), so safe coding practices are essential.
+
+Ecosystem
+Node.js: Extends JS to backend development.
+
+Frameworks/Libraries: React, Angular, Vue for frontend; Express.js for backend.
+
+Tooling: NPM (package manager), Babel (transpiler), Webpack (bundler).
+
+JavaScript has evolved from a simple scripting language into a full-stack powerhouse, enabling everything from interactive websites to mobile apps, desktop applications, and even IoT solutions.
+
+🎯 25 JavaScript Questions & Answers
+Basics
+Q: What is JavaScript?
+A: A high-level, interpreted programming language used to add interactivity to web pages.
+
+Q: Difference between var, let, and const?
+A: var is function-scoped, let and const are block-scoped. const cannot be reassigned.
+
+Q: What are primitive data types in JS?
+A: String, Number, Boolean, Null, Undefined, Symbol, BigInt.
+
+Q: What is the difference between == and ===?
+A: == checks value with type coercion, === checks value and type strictly.
+
+Q: What is NaN?
+A: “Not-a-Number,” a special value returned when a mathematical operation fails.
+
+Functions & Scope
+Q: What are arrow functions?
+A: A shorter syntax for functions introduced in ES6, e.g., const add = (a,b) => a+b;.
+
+Q: What is a closure?
+A: A function that retains access to its lexical scope even when executed outside it.
+
+Q: Explain hoisting.
+A: JS moves variable and function declarations to the top of their scope before execution.
+
+Q: What is the difference between function declaration and function expression?
+A: Declarations are hoisted; expressions are not.
+
+Q: What is the scope chain?
+A: The hierarchy JS uses to resolve variable names—local → outer → global.
+
+Objects & OOP
+Q: How does prototypal inheritance work?
+A: Objects inherit properties/methods from their prototype chain.
+
+Q: Difference between null and undefined?
+A: null is intentional absence of value; undefined means a variable has been declared but not assigned.
+
+Q: What is this keyword?
+A: Refers to the object that is currently executing the function.
+
+Q: What are classes in JS?
+A: ES6 syntax sugar over prototypes to create objects with constructors and methods.
+
+Q: What is JSON?
+A: JavaScript Object Notation, a lightweight format for data exchange.
+
+Asynchronous JS
+Q: What is the event loop?
+A: Mechanism that handles asynchronous callbacks in JS’s single-threaded environment.
+
+Q: Difference between synchronous and asynchronous code?
+A: Synchronous executes line by line; asynchronous allows tasks to run without blocking.
+
+Q: What are promises?
+A: Objects representing eventual completion or failure of an asynchronous operation.
+
+Q: What is async/await?
+A: ES8 syntax to write asynchronous code in a synchronous style.
+
+Q: What is callback hell?
+A: Nested callbacks that make code hard to read and maintain.
+
+DOM & Browser
+Q: How do you select an element in the DOM?
+A: Using methods like document.getElementById, querySelector.
+
+Q: What is event bubbling?
+A: When an event propagates from the target element up through its ancestors.
+
+Q: Difference between innerHTML and textContent?
+A: innerHTML parses HTML tags; textContent returns plain text.
+
+Q: What is localStorage vs sessionStorage?
+A: Both store data in the browser; localStorage persists until cleared, sessionStorage lasts until the tab is closed.
+
+Q: What is AJAX?
+A: Asynchronous JavaScript and XML, used to fetch data from a server without reloading the page.
