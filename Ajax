@@ -1,0 +1,75 @@
+⚡ Quick Summary of AJAX
+AJAX = Asynchronous JavaScript and XML
+
+It’s a technique (not a language) used in web development.
+
+Purpose: Send/receive data from a server without reloading the page.
+
+Commonly used with JSON instead of XML today.
+
+Example: When you type in Google search, results update instantly — that’s AJAX.
+
+✅ 20 Quick Q&A on AJAX
+Basics
+Q: What does AJAX stand for?
+A: Asynchronous JavaScript and XML.
+
+Q: Is AJAX a programming language?
+A: No, it’s a technique.
+
+Q: What’s the main purpose of AJAX?
+A: Update parts of a webpage without reloading.
+
+Q: Which technologies does AJAX combine?
+A: JavaScript, HTML, CSS, DOM, and server-side scripts.
+
+Q: What’s commonly used instead of XML today?
+A: JSON.
+
+Functionality
+Q: How does AJAX communicate with the server?
+A: Using XMLHttpRequest or fetch().
+
+Q: Is AJAX synchronous or asynchronous?
+A: Asynchronous (non-blocking).
+
+Q: Can AJAX work with PHP, ASP.NET, or Node.js?
+A: Yes, it works with any server-side language.
+
+Q: Does AJAX require page refresh?
+A: No.
+
+Q: What’s a real-life example of AJAX?
+A: Live search suggestions on Google.
+
+Advantages
+Q: Why is AJAX faster?
+A: It only updates parts of the page, not the whole.
+
+Q: Does AJAX improve user experience?
+A: Yes, smoother and more interactive.
+
+Q: Can AJAX reduce server load?
+A: Yes, fewer full-page requests.
+
+Q: Is AJAX compatible with modern browsers?
+A: Yes.
+
+Q: Can AJAX send both GET and POST requests?
+A: Yes.
+
+Limitations
+Q: Does AJAX work if JavaScript is disabled?
+A: No.
+
+Q: Can AJAX affect SEO?
+A: Yes, if content isn’t crawlable.
+
+Q: Is AJAX secure by itself?
+A: No, security must be handled server-side.
+
+Q: Can AJAX handle large data?
+A: Yes, but performance depends on server and network.
+
+Q: Is AJAX still relevant today?
+A: Yes, often combined with frameworks like React, Angular, and Vue.
