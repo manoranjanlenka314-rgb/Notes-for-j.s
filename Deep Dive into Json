@@ -1,0 +1,179 @@
+JSON (JavaScript Object Notation) is a lightweight data-interchange format widely used in web development, APIs, and configuration files. It is text-based, human-readable, and easy for machines to parse and generate. JSON is language-independent but closely resembles JavaScript object syntax, making it intuitive for developers.
+
+✨ Key Features
+Structure: JSON data is organized into key-value pairs.
+
+Data Types: Supports strings, numbers, booleans, arrays, objects, and null.
+
+Syntax: Uses curly braces {} for objects and square brackets [] for arrays.
+
+Interoperability: Works across programming languages (Python, Java, C#, etc.).
+
+Use Cases: Commonly used in REST APIs, configuration files, and data storage.
+
+📊 Example
+json
+{
+  "name": "Manoranjan",
+  "age": 25,
+  "skills": ["C#", ".NET", "SQL", "JavaScript"],
+  "isEmployed": true
+}
+This represents a person with attributes like name, age, skills, and employment status.
+
+⚡ Why JSON is Important
+Simplicity: Easy to read and write compared to XML.
+
+Efficiency: Lightweight, reducing bandwidth usage.
+
+Universality: Supported by almost all modern programming languages.
+
+Flexibility: Can represent complex nested structures.
+
+Standardization: Used as the backbone of modern APIs and web services.
+
+📘 25 Important JSON Questions with Detailed Answers
+1. What is JSON?
+JSON is a text-based format for representing structured data. It is widely used for transmitting data between a server and a client in web applications. Its simplicity and readability make it a universal choice for data exchange.
+
+2. Why is JSON preferred over XML?
+JSON is less verbose, easier to read, and faster to parse compared to XML. While XML supports attributes and mixed content, JSON focuses on simplicity and efficiency, which is ideal for APIs and lightweight data transfer.
+
+3. What are the basic data types in JSON?
+JSON supports:
+
+String
+
+Number
+
+Boolean (true/false)
+
+Null
+
+Object (key-value pairs)
+
+Array (ordered list of values)
+
+This limited set ensures simplicity and cross-language compatibility.
+
+4. What is the difference between JSON object and JSON array?
+Object: { "key": "value" } → unordered collection of key-value pairs.
+
+Array: [ "value1", "value2" ] → ordered list of values.
+Objects are like dictionaries, while arrays are like lists.
+
+5. How is JSON different from JavaScript objects?
+Although JSON resembles JavaScript objects, JSON is purely data with strict syntax rules:
+
+Keys must be in double quotes.
+
+No functions allowed.
+
+Only specific data types are supported.
+JavaScript objects are more flexible but less standardized.
+
+6. Can JSON store nested data?
+Yes, JSON supports nesting. Objects can contain arrays, and arrays can contain objects, allowing complex hierarchical structures.
+
+Example:
+
+json
+{
+  "student": {
+    "name": "Ravi",
+    "subjects": ["Math", "Science"]
+  }
+}
+7. What is JSON Schema?
+JSON Schema is a way to define the structure and validation rules for JSON data. It specifies required fields, data types, and constraints, ensuring data integrity in APIs.
+
+8. How is JSON parsed in JavaScript?
+Using:
+
+JSON.parse() → Converts JSON string to JavaScript object.
+
+JSON.stringify() → Converts JavaScript object to JSON string.
+
+9. What happens if JSON is malformed?
+Malformed JSON (e.g., missing quotes, trailing commas) causes parsing errors. Since JSON must follow strict syntax, even small mistakes break the structure.
+
+10. Is JSON case-sensitive?
+Yes. Keys and values are case-sensitive. "Name" and "name" are treated as different keys.
+
+11. Can JSON store comments?
+No. JSON does not support comments to maintain simplicity. Developers often use separate documentation or metadata fields instead.
+
+12. What is the MIME type of JSON?
+The official MIME type is application/json. This is used in HTTP headers to indicate JSON data.
+
+13. How is JSON used in REST APIs?
+In REST APIs, JSON is the standard format for request and response bodies. For example:
+
+json
+{
+  "username": "admin",
+  "password": "12345"
+}
+This could be sent in a POST request for authentication.
+
+14. Can JSON represent relational data?
+Yes, but indirectly. JSON can represent tables as arrays of objects. However, it lacks direct relational features like joins, so databases like MongoDB use JSON-like structures for flexibility.
+
+15. What is JSONP?
+JSONP (JSON with Padding) is a technique to bypass cross-domain restrictions in browsers. It wraps JSON data in a function call, allowing data retrieval via <script> tags.
+
+16. How does JSON handle null values?
+JSON supports null to represent missing or empty values. Example:
+
+json
+{ "middleName": null }
+17. What are some common JSON libraries?
+JavaScript: Built-in JSON object.
+
+Python: json module.
+
+Java: Jackson, Gson.
+
+C#: Newtonsoft.Json, System.Text.Json.
+
+18. Can JSON be used in databases?
+Yes. Modern databases like MongoDB, PostgreSQL, and MySQL support JSON storage and querying. This allows flexible schema-less data management.
+
+19. What is the difference between JSON and YAML?
+JSON: Strict, lightweight, machine-friendly.
+
+YAML: More human-readable, supports comments, but more complex.
+JSON is preferred for APIs, while YAML is common in configuration files.
+
+20. How do you validate JSON data?
+Validation can be done using:
+
+JSON Schema
+
+Online validators
+
+Built-in libraries in programming languages
+Validation ensures data follows expected structure and types.
+
+21. What is the role of JSON in AJAX?
+AJAX uses JSON to asynchronously exchange data between client and server without reloading the page. JSON makes this process efficient and lightweight.
+
+22. Can JSON store binary data?
+Not directly. Binary data must be encoded (e.g., Base64) before being stored in JSON.
+
+23. What is the difference between JSON and CSV?
+JSON: Hierarchical, supports complex structures.
+
+CSV: Tabular, simple rows and columns.
+JSON is better for nested data, while CSV is better for flat datasets.
+
+24. How is JSON used in configuration files?
+Many applications use JSON for configuration because it is easy to read and modify. Example:
+
+json
+{
+  "theme": "dark",
+  "language": "en"
+}
+25. Why is JSON important in modern web development?
+JSON is the backbone of modern APIs, microservices, and web applications. Its simplicity, universality, and efficiency make it indispensable for data exchange across platforms.
