@@ -1,0 +1,128 @@
+AJAX is a technique that allows web applications to communicate with a server asynchronously—meaning data can be sent and received in the background without requiring a full page reload. This creates smoother, faster, and more interactive user experiences.
+
+✨ Key Concepts
+Definition: AJAX is not a programming language but a set of web technologies (JavaScript, XML/JSON, HTML, CSS, and the XMLHttpRequest object).
+
+Workflow:
+
+A client-side event triggers JavaScript.
+
+JavaScript creates an XMLHttpRequest object.
+
+The request is sent to the server.
+
+The server processes and returns data (often JSON).
+
+JavaScript updates the webpage dynamically without reloading.
+
+Data Formats: Initially XML, but JSON is now the most common format due to simplicity.
+
+Advantages:
+
+Faster page updates
+
+Reduced bandwidth usage
+
+Improved user experience
+
+Limitations:
+
+Can complicate browser history/back button behavior
+
+Requires careful error handling
+
+Security concerns (e.g., cross-site scripting)
+
+📝 Notes on AJAX
+AJAX = Asynchronous JavaScript and XML
+
+Uses XMLHttpRequest or modern fetch() API
+
+Commonly paired with JSON for lightweight data exchange
+
+Enables features like:
+
+Live search suggestions
+
+Auto-refreshing feeds
+
+Form validation without reload
+
+Example: Submitting a form and updating only part of the page with new data.
+
+📊 Example Code (AJAX with JSON)
+javascript
+// Using XMLHttpRequest
+let xhr = new XMLHttpRequest();
+xhr.open("GET", "data.json", true);
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    let data = JSON.parse(xhr.responseText);
+    console.log(data.name); // Access JSON data
+  }
+};
+xhr.send();
+
+// Modern fetch API
+fetch("data.json")
+  .then(response => response.json())
+  .then(data => console.log(data.name))
+  .catch(error => console.error("Error:", error));
+❓ 15 Important AJAX Questions with Answers
+What is AJAX?  
+A technique for updating parts of a web page asynchronously without reloading the entire page.
+
+Is AJAX a programming language?  
+No. It’s a combination of technologies (JavaScript, HTML, CSS, JSON/XML).
+
+Why is JSON preferred over XML in AJAX?  
+JSON is lightweight, easier to parse, and integrates seamlessly with JavaScript.
+
+What is the role of XMLHttpRequest?  
+It’s the JavaScript object used to send and receive data asynchronously from a server.
+
+What replaced XMLHttpRequest in modern web apps?  
+The fetch() API, which is simpler and returns promises.
+
+How does AJAX improve user experience?  
+By allowing dynamic updates (like live search or chat apps) without full page reloads.
+
+Can AJAX work with all data formats?  
+Yes—JSON, XML, plain text, or even HTML fragments.
+
+What is the difference between synchronous and asynchronous requests?
+
+Synchronous: Blocks page until response arrives.
+
+Asynchronous: Allows page interaction while waiting for response.
+
+What are common use cases of AJAX?
+
+Auto-complete search
+
+Live chat
+
+Dynamic dashboards
+
+Form validation
+
+Is AJAX secure?  
+AJAX itself is neutral, but improper handling can lead to vulnerabilities like XSS or CSRF.
+
+How does AJAX relate to REST APIs?  
+AJAX is often used to call REST endpoints and process JSON responses.
+
+Can AJAX update only part of a webpage?  
+Yes, that’s its main purpose—partial page updates.
+
+What happens if the server is slow?  
+AJAX requests may time out or cause delayed updates; error handling is crucial.
+
+Does AJAX affect SEO?  
+It can, since search engines may not index dynamically loaded content unless handled properly.
+
+What’s the difference between AJAX and Fetch API?
+
+AJAX uses XMLHttpRequest (older, callback-based).
+
+Fetch API uses promises, cleaner syntax, and better error handling.
