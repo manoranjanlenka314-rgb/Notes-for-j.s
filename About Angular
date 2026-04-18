@@ -1,0 +1,191 @@
+Long Summary of Angular
+Angular is a TypeScript-based open-source front-end framework maintained by Google. It is designed for building dynamic, single-page applications (SPAs) with a strong emphasis on modularity, scalability, and maintainability. Unlike libraries such as React, Angular is a full-fledged framework that provides everything you need out of the box: routing, forms, HTTP client, dependency injection, and testing utilities.
+
+Key Features
+Component-based architecture: Applications are built using reusable components, each with its own template, logic, and styles.
+
+Two-way data binding: Synchronizes data between the model (component class) and the view (template).
+
+Dependency Injection (DI): Provides a powerful way to manage services and share functionality across components.
+
+Directives: Special markers in templates that extend HTML with custom behavior (e.g., *ngIf, *ngFor).
+
+Services: Classes that encapsulate business logic and can be injected into components.
+
+Routing: Built-in module to handle navigation between views without reloading the page.
+
+Reactive programming: Uses RxJS for handling asynchronous data streams.
+
+Ahead-of-Time (AOT) Compilation: Compiles templates at build time for faster rendering and better security.
+
+Cross-platform: Supports web, mobile (via Ionic), and desktop applications.
+
+Advantages
+Provides a complete ecosystem (no need for external libraries for basic tasks).
+
+Strong community support and backed by Google.
+
+Encourages structured coding practices with TypeScript.
+
+Built-in testing support with Jasmine and Karma.
+
+Use Cases
+Enterprise-level applications (banking, e-commerce, dashboards).
+
+Applications requiring complex state management and scalable architecture.
+
+Cross-platform solutions where consistency and maintainability are critical.
+
+🎯 25 Angular Questions with Detailed Answers
+1. What is Angular?
+Answer: Angular is a front-end framework developed by Google for building dynamic single-page applications. It uses TypeScript and provides built-in modules for routing, forms, HTTP requests, and dependency injection. Unlike libraries such as React, Angular is opinionated and offers a complete solution, making it suitable for large-scale applications.
+
+2. Difference between AngularJS and Angular?
+Answer: AngularJS (2010) was based on JavaScript and used controllers and $scope. Angular (2016 onwards) is a complete rewrite using TypeScript, with a component-based architecture, improved performance, and modern features like RxJS, AOT compilation, and modular design. AngularJS is now obsolete, while Angular continues to evolve.
+
+3. What are Components in Angular?
+Answer: Components are the building blocks of Angular applications. Each component consists of:
+
+A TypeScript class (logic and data).
+
+An HTML template (view).
+
+CSS styles (presentation).
+They encapsulate functionality and can be reused across the application, promoting modularity.
+
+4. Explain Data Binding in Angular.
+Answer: Data binding connects the component’s data with the template. Angular supports:
+
+Interpolation ({{value}}) for displaying data.
+
+Property binding ([property]="value") for setting DOM properties.
+
+Event binding ((event)="method()") for handling user actions.
+
+Two-way binding ([(ngModel)]="value") for synchronizing data between model and view.
+
+5. What are Directives in Angular?
+Answer: Directives are instructions in the DOM. Types:
+
+Structural directives (*ngIf, *ngFor) change the DOM layout.
+
+Attribute directives ([ngClass], [ngStyle]) modify element appearance/behavior.
+
+Custom directives allow developers to create reusable behaviors.
+
+6. What is Dependency Injection (DI)?
+Answer: DI is a design pattern where objects (services) are provided to components rather than being created inside them. Angular’s DI system allows services to be injected into components, improving testability, modularity, and reducing tight coupling.
+
+7. What are Services in Angular?
+Answer: Services are classes that contain business logic or reusable functionality (e.g., fetching data from APIs). They are injected into components using Angular’s DI system. This separation of concerns keeps components focused on UI logic.
+
+8. Explain Angular Modules.
+Answer: Modules (@NgModule) group related components, directives, pipes, and services. The root module (AppModule) bootstraps the application. Feature modules (e.g., UserModule) organize code into logical units, improving maintainability and lazy loading.
+
+9. What is Routing in Angular?
+Answer: Angular’s Router enables navigation between views without reloading the page. It maps URLs to components. Features include:
+
+RouterLink for navigation.
+
+Route Guards for authentication/authorization.
+
+Lazy loading for performance optimization.
+
+10. What is RxJS in Angular?
+Answer: RxJS is a library for reactive programming using Observables. Angular uses RxJS for handling asynchronous operations like HTTP requests, event streams, and real-time data. It provides operators like map, filter, and mergeMap for transforming data streams.
+
+11. What is Ahead-of-Time (AOT) Compilation?
+Answer: AOT compiles Angular templates and TypeScript code at build time, producing optimized JavaScript. Benefits:
+
+Faster rendering.
+
+Smaller bundle size.
+
+Early error detection.
+
+Improved security (no runtime template compilation).
+
+12. What are Pipes in Angular?
+Answer: Pipes transform data in templates. Example: {{ date | date:'short' }} formats a date. Angular provides built-in pipes (uppercase, currency, async) and allows custom pipes for reusable transformations.
+
+13. Difference between Template-driven and Reactive Forms?
+Answer:
+
+Template-driven forms: Simple, use ngModel, suitable for small forms. Logic resides in the template.
+
+Reactive forms: More powerful, use FormControl and FormGroup, suitable for complex forms. Logic resides in the component class, offering better testability and scalability.
+
+14. What is Angular CLI?
+Answer: Angular CLI is a command-line tool for creating, building, testing, and deploying Angular applications. It automates tasks like scaffolding components, generating services, and optimizing builds, improving developer productivity.
+
+15. What are Route Guards?
+Answer: Route Guards control navigation. Types:
+
+CanActivate: Prevents unauthorized access.
+
+CanDeactivate: Prevents leaving a route with unsaved changes.
+
+Resolve: Pre-fetches data before route activation.
+They enhance security and user experience.
+
+16. What is Lazy Loading in Angular?
+Answer: Lazy loading loads feature modules only when needed, reducing initial bundle size and improving performance. It is configured in the router using loadChildren.
+
+17. Explain Angular Lifecycle Hooks.
+Answer: Lifecycle hooks are methods that allow developers to tap into component life stages:
+
+ngOnInit: Initialization logic.
+
+ngOnChanges: Responds to input changes.
+
+ngOnDestroy: Cleanup before component removal.
+They provide fine-grained control over component behavior.
+
+18. What is Change Detection in Angular?
+Answer: Change detection updates the view when data changes. Angular uses the zone.js library to track asynchronous operations. Developers can optimize performance using ChangeDetectionStrategy.OnPush.
+
+19. What is Angular Universal?
+Answer: Angular Universal enables server-side rendering (SSR). Benefits:
+
+Faster initial load.
+
+Better SEO.
+
+Improved performance on low-powered devices.
+It renders Angular applications on the server before sending HTML to the client.
+
+20. What are Observables vs Promises?
+Answer:
+
+Promises: Handle single asynchronous values.
+
+Observables: Handle multiple values over time, support operators, and cancellation.
+Angular prefers Observables (via RxJS) for flexibility in handling streams of data.
+
+21. What is Ivy in Angular?
+Answer: Ivy is Angular’s rendering engine introduced in Angular 9. It improves build size, debugging, and performance. It allows features like tree-shaking and dynamic component loading.
+
+22. What is Angular Material?
+Answer: Angular Material is a UI component library following Google’s Material Design. It provides ready-to-use components like buttons, dialogs, tables, and form controls, ensuring consistency and accessibility.
+
+23. How does Angular handle Security?
+Answer: Angular provides built-in protections:
+
+Sanitization against XSS attacks.
+
+DomSanitizer for safe handling of HTML.
+
+Route Guards for authentication.
+
+AOT compilation to prevent runtime template injection.
+
+24. What is the difference between ngOnInit and Constructor?
+Answer:
+
+Constructor: Initializes class members, runs before Angular sets inputs.
+
+ngOnInit: Lifecycle hook, runs after inputs are set, ideal for initialization logic like fetching data.
+Best practice: keep constructors lightweight and use ngOnInit for setup.
+
+25. Why choose Angular over other frameworks?
+Answer: Angular is a complete solution with built-in modules, Type
