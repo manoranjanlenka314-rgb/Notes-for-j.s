@@ -1,0 +1,124 @@
+JavaScript Object Notation (JSON) is a lightweight data-interchange format that is widely used in modern software development. It is text-based, human-readable, and easy for machines to parse and generate. JSON is built on two universal data structures:
+
+Objects: Collections of key-value pairs enclosed in curly braces {}. Keys are strings, and values can be strings, numbers, booleans, arrays, objects, or null.
+
+Arrays: Ordered lists of values enclosed in square brackets [].
+
+Key Features
+Language-independent: Although derived from JavaScript, JSON is supported by almost all programming languages.
+
+Human-readable: Its syntax is simple and resembles JavaScript object literals.
+
+Data exchange: Commonly used for APIs, configuration files, and web applications.
+
+Serialization: Converts complex data structures into text for storage or transmission.
+
+Parsing: Converts JSON text back into usable objects in programming languages.
+
+Common Use Cases
+Web APIs: RESTful services often send and receive data in JSON format.
+
+Configuration files: Many applications use .json files for settings.
+
+Data storage: Lightweight databases like MongoDB store documents in JSON-like formats.
+
+Interoperability: JSON bridges communication between different systems and platforms.
+
+📘 25 Deep-Dive JSON Questions with Answers
+1. What is JSON and why is it important?
+JSON is a text-based format for representing structured data. It is important because it provides a universal way to exchange data between systems, especially in web applications where client-server communication is critical.
+
+2. How does JSON differ from XML?
+JSON is simpler, more compact, and easier to read compared to XML. Unlike XML, JSON does not use closing tags and is less verbose. JSON is also faster to parse in most programming languages.
+
+3. What are the basic data types supported in JSON?
+JSON supports:
+
+String
+
+Number
+
+Boolean (true/false)
+
+Null
+
+Object
+
+Array
+This limited set makes JSON lightweight and universally compatible.
+
+4. Can JSON keys be non-string values?
+No. JSON keys must always be strings enclosed in double quotes. For example:
+
+json
+{"name": "John"}
+5. How is JSON parsed in JavaScript?
+JavaScript provides JSON.parse() to convert JSON text into an object, and JSON.stringify() to convert an object into JSON text.
+
+6. Why is JSON preferred in REST APIs?
+Because JSON is lightweight, easy to parse, and supported across platforms. It reduces bandwidth usage compared to XML and integrates seamlessly with JavaScript-based frontends.
+
+7. What is the difference between null and undefined in JSON?
+JSON supports null but not undefined. If a value is undefined in JavaScript, it will be omitted when converted to JSON.
+
+8. Can JSON store comments?
+No. JSON does not support comments. This is intentional to keep the format simple and unambiguous.
+
+9. How do you validate JSON data?
+Validation ensures JSON follows correct syntax. Tools like JSONLint or libraries in programming languages can check for errors such as missing quotes or trailing commas.
+
+10. What is the MIME type for JSON?
+The official MIME type is application/json. This is used in HTTP headers to indicate JSON data is being transmitted.
+
+11. How does JSON handle numbers?
+JSON supports integers and floating-point numbers. However, it does not differentiate between types like int or double; all are treated as numbers.
+
+12. Can JSON represent dates?
+No. JSON does not have a native date type. Dates are usually represented as strings (e.g., "2026-04-20T23:27:00Z") or as timestamps.
+
+13. What happens if JSON contains duplicate keys?
+If duplicate keys exist, the last key-value pair overrides the previous ones during parsing. For example:
+
+json
+{"id": 1, "id": 2} // Result: {"id": 2}
+14. How does JSON handle nested structures?
+JSON allows objects and arrays to be nested within each other, enabling representation of complex hierarchical data.
+
+15. What are some common pitfalls when working with JSON?
+Forgetting double quotes around keys
+
+Using single quotes instead of double quotes
+
+Adding trailing commas
+
+Expecting comments to work
+
+16. How is JSON used in databases like MongoDB?
+MongoDB stores documents in BSON (Binary JSON), which extends JSON with additional data types like Date and ObjectId.
+
+17. What is JSON Schema?
+JSON Schema is a specification for validating JSON data structure. It defines rules for required fields, data types, and formats, ensuring consistency across systems.
+
+18. How does JSON handle large datasets?
+Large JSON files can be streamed or paginated to avoid memory overload. Libraries like Jackson (Java) or Newtonsoft.Json (.NET) support streaming.
+
+19. Can JSON be encrypted?
+Yes. JSON itself is plain text, but it can be encrypted using algorithms like AES before transmission to ensure security.
+
+20. How does JSON compare to YAML?
+YAML is more human-friendly and supports comments, but JSON is stricter and widely adopted in APIs. JSON is also faster to parse due to its simplicity.
+
+21. What is the role of JSON in AJAX?
+AJAX requests often fetch JSON data from servers asynchronously. This allows web pages to update dynamically without reloading.
+
+22. How does JSON handle boolean values?
+JSON supports true and false as lowercase literals. Uppercase versions (True, False) are invalid.
+
+23. What is the difference between JSON and JavaScript objects?
+JSON is a string format, while JavaScript objects are in-memory structures. JSON must be parsed into objects before use in JavaScript.
+
+24. How do you convert JSON to CSV?
+By mapping JSON objects into rows and columns. Libraries in Python, JavaScript, or C# can transform JSON arrays into CSV files for easier analysis.
+
+25. Why is JSON considered language-independent?
+Because it is based on universal data structures (objects and arrays) that exist in almost all programming languages. This makes JSON a common "bridge" for interoperability.
