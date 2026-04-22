@@ -1,0 +1,155 @@
+JSON (JavaScript Object Notation) is a lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate. It is text-based and language-independent, but it uses conventions familiar to programmers of C-family languages (C, C#, Java, JavaScript, etc.).
+
+Key Features:
+Structure: JSON is built on two structures:
+
+Objects: Collections of key-value pairs enclosed in {}.
+
+Arrays: Ordered lists of values enclosed in [].
+
+Data Types: Supports strings, numbers, booleans, null, objects, and arrays.
+
+Usage in Web Development:
+
+Widely used for client-server communication.
+
+Commonly returned by APIs and MVC controllers.
+
+Easily parsed by JavaScript using JSON.parse() and serialized using JSON.stringify().
+
+Advantages:
+
+Lightweight compared to XML.
+
+Human-readable and easy to debug.
+
+Supported natively in JavaScript and most modern languages.
+
+In ASP.NET MVC:
+
+Controllers often return JSON using JsonResult.
+
+Useful for AJAX calls where you want to update part of a page without full reload.
+
+Integrates seamlessly with DataTables for dynamic data binding.
+
+📝 25 Interview-Style Q&A (Detailed)
+JSON Return in MVC Controller
+Q: How do you return JSON from an MVC controller?
+A: Use JsonResult. Example:
+
+csharp
+public JsonResult GetData() {
+    var data = new { Name = "Manoranjan", Age = 25 };
+    return Json(data, JsonRequestBehavior.AllowGet);
+}
+This serializes the object into JSON and sends it to the client.
+
+Q: Why do we use JsonRequestBehavior.AllowGet?
+A: By default, MVC blocks GET requests for JSON to prevent sensitive data exposure. AllowGet explicitly permits GET requests, useful for safe data like dropdown lists.
+
+Q: What happens if you don’t use AllowGet in a GET request?
+A: MVC throws an exception: “This request has been blocked because sensitive information could be disclosed to third-party websites…”.
+
+Q: How do you return a list of objects as JSON?
+A: Serialize collections:
+
+csharp
+return Json(myList, JsonRequestBehavior.AllowGet);
+The client receives an array of JSON objects.
+
+Q: Can you customize JSON serialization in MVC?
+A: Yes, by using JsonResult with custom JsonSerializerSettings (e.g., camelCase, ignoring nulls).
+
+Page Refresh & isRefresh
+Q: What is the difference between a full page refresh and partial refresh?
+A: Full refresh reloads the entire HTML, CSS, JS, and data. Partial refresh (AJAX) updates only a section, improving performance and user experience.
+
+Q: How can you detect if a page is refreshed in JavaScript?
+A: Use performance.navigation.type.
+
+javascript
+if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+    console.log("Page was refreshed");
+}
+Q: What is isRefresh in MVC context?
+A: It’s a flag developers use to detect if the request is due to a page reload. For example, storing a value in TempData or session and checking it on reload.
+
+Q: How do you prevent duplicate form submissions on refresh?
+A: Use PRG (Post-Redirect-Get) pattern. After form submission, redirect to a GET action, so refresh doesn’t resubmit.
+
+Q: How can you force a page refresh after JSON data update?
+A: Use JavaScript:
+
+javascript
+location.reload();
+Or refresh only a section using AJAX.
+
+DataTables Refresh
+Q: How do you bind JSON data to a DataTable?
+A:
+
+javascript
+$('#myTable').DataTable({
+    ajax: '/Controller/GetData',
+    columns: [
+        { data: 'Name' },
+        { data: 'Age' }
+    ]
+});
+Q: How do you refresh a DataTable without reloading the page?
+A:
+
+javascript
+var table = $('#myTable').DataTable();
+table.ajax.reload();
+Q: What is the difference between ajax.reload() and draw() in DataTables?
+A: ajax.reload() fetches new data from the server. draw() redraws the table with existing data.
+
+Q: How do you refresh DataTable after inserting new data?
+A: Call table.ajax.reload() inside the AJAX success callback after saving data.
+
+Q: How do you handle server-side pagination with DataTables?
+A: Configure DataTables with serverSide: true and return JSON with recordsTotal, recordsFiltered, and data.
+
+Advanced JSON + MVC + Refresh Scenarios
+Q: How do you return JSON with status codes in MVC?
+A: Use Json(new { success = true, message = "Saved" }). The client checks success.
+
+Q: How do you refresh only a div with JSON data?
+A: Use jQuery AJAX:
+
+javascript
+$.getJSON('/Controller/GetData', function(data) {
+    $('#myDiv').html(data.Name);
+});
+Q: How do you handle JSON errors in MVC?
+A: Wrap in try-catch and return JSON with error message:
+
+csharp
+return Json(new { success = false, error = ex.Message });
+Q: How do you refresh DataTable when filters change?
+A: Pass parameters in AJAX call:
+
+javascript
+table.ajax.url('/Controller/GetData?filter=value').load();
+Q: How do you avoid caching issues with JSON refresh?
+A: Append timestamp to URL:
+
+javascript
+table.ajax.url('/Controller/GetData?t=' + new Date().getTime()).load();
+Practical Interview-Oriented Questions
+Q: Explain how JSON helps avoid full page reloads.
+A: JSON allows partial updates via AJAX, so only data changes, not the entire page. This improves performance.
+
+Q: How do you debug JSON issues in MVC?
+A: Use browser dev tools → Network tab → Inspect JSON response. Also log server-side serialization.
+
+Q: How do you refresh DataTable after deleting a row?
+A: Perform delete via AJAX, then call table.ajax.reload() to fetch updated data.
+
+Q: How do you handle large JSON data in DataTables?
+A: Use server-side processing (serverSide: true) to fetch only required rows per page.
+
+Q: How do you ensure DataTable refresh doesn’t break sorting/pagination?
+A: Use table.ajax.reload(null, false) to refresh data but retain current page and sort order.
