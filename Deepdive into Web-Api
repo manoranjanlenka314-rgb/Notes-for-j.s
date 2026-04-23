@@ -1,0 +1,127 @@
+A Web API (Application Programming Interface) is a set of protocols and tools that allow different software systems to communicate over the web. It acts as a bridge between client applications (like browsers, mobile apps, or other services) and server-side resources (like databases, business logic, or external services).
+
+Key Concepts
+API Basics: Defines endpoints (URLs) and methods (GET, POST, PUT, DELETE) for interaction.
+
+REST (Representational State Transfer): The most common style of Web API, built on HTTP principles, stateless, resource-oriented.
+
+SOAP (Simple Object Access Protocol): XML-based, more rigid, often used in enterprise systems.
+
+Endpoints: Specific URLs that represent resources (e.g., /users, /products).
+
+HTTP Methods:
+
+GET → Retrieve data
+
+POST → Create new data
+
+PUT/PATCH → Update existing data
+
+DELETE → Remove data
+
+Request/Response Cycle:
+
+Request: Sent by client with headers, parameters, and body.
+
+Response: Sent by server with status codes (200 OK, 404 Not Found, 500 Internal Server Error).
+
+Data Formats: JSON (most popular), XML, sometimes plain text.
+
+Authentication:
+
+API Keys
+
+OAuth 2.0
+
+JWT (JSON Web Tokens)
+
+Versioning: Ensures backward compatibility (e.g., /api/v1/users).
+
+Error Handling: Clear status codes and messages are critical.
+
+Security: HTTPS, rate limiting, input validation, CORS policies.
+
+Use Cases: Social media APIs (Twitter, Facebook), payment gateways (Stripe, PayPal), cloud services (Azure, AWS), and custom enterprise APIs.
+
+In short, Web APIs make modern applications modular, scalable, and interoperable — allowing developers to integrate services quickly without reinventing the wheel.
+
+🎯 25 Web API Questions & Answers
+Basics
+Q: What is a Web API?
+A: A Web API is an interface that allows applications to communicate over the web using HTTP protocols.
+
+Q: Difference between API and Web API?
+A: API is a general interface; Web API specifically uses web technologies (HTTP, JSON, XML).
+
+Q: What is REST?
+A: REST is an architectural style for APIs that uses stateless communication and resource-based URLs.
+
+Q: What is SOAP?
+A: SOAP is a protocol using XML for structured communication, often in enterprise systems.
+
+Q: Why are Web APIs important?
+A: They enable integration, scalability, and modular development across platforms.
+
+HTTP & Endpoints
+Q: What are HTTP methods in Web API?
+A: GET, POST, PUT, PATCH, DELETE.
+
+Q: What is an endpoint?
+A: A specific URL that represents a resource in the API.
+
+Q: Difference between PUT and PATCH?
+A: PUT replaces the entire resource; PATCH updates only specific fields.
+
+Q: What is the role of HTTP status codes?
+A: They indicate the result of a request (e.g., 200 OK, 404 Not Found).
+
+Q: What is the difference between query parameters and path parameters?
+A: Query parameters are in the URL after ?; path parameters are part of the endpoint itself.
+
+Data & Formats
+Q: Which data formats are commonly used in Web API?
+A: JSON (most common), XML, sometimes plain text.
+
+Q: Why is JSON preferred over XML?
+A: JSON is lightweight, human-readable, and faster to parse.
+
+Q: What is content negotiation?
+A: The process where client and server agree on the data format (JSON/XML).
+
+Q: What is serialization?
+A: Converting objects into a format (JSON/XML) for transmission.
+
+Q: What is deserialization?
+A: Converting received data back into objects.
+
+Authentication & Security
+Q: What is an API key?
+A: A unique identifier used to authenticate requests.
+
+Q: What is OAuth 2.0?
+A: A protocol for secure authorization, often used for third-party access.
+
+Q: What is JWT?
+A: JSON Web Token, a compact way to securely transmit information between parties.
+
+Q: What is CORS?
+A: Cross-Origin Resource Sharing, a mechanism to allow/disallow requests from different domains.
+
+Q: How do you secure a Web API?
+A: Use HTTPS, authentication, rate limiting, input validation, and proper error handling.
+
+Advanced & Practical
+Q: What is API versioning?
+A: Managing changes in APIs without breaking existing clients (e.g., /api/v1/).
+
+Q: What is rate limiting?
+A: Restricting the number of requests a client can make in a given time.
+
+Q: What is idempotency in APIs?
+A: An operation that produces the same result no matter how many times it is executed (e.g., DELETE).
+
+Q: What is HATEOAS in REST?
+A: Hypermedia As The Engine Of Application State — providing links in responses to guide clients.
+
+Q: Give an example of a real-world Web API.
+A: The Twitter API, which allows developers to fetch tweets, post updates, and manage accounts.
