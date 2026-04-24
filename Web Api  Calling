@@ -1,0 +1,129 @@
+What is Web API?
+ASP.NET Web API is a framework for building HTTP services that can be consumed by a wide range of clients, including browsers, mobile apps, and desktop applications. It is ideal for creating RESTful services and integrates seamlessly with ASP.NET MVC.
+
+Why Web API?
+Lightweight compared to WCF for REST services.
+
+Cross-platform: works with any client that can make HTTP requests.
+
+Content negotiation: automatically returns JSON or XML depending on client request headers.
+
+Easy integration with MVC projects.
+
+Core Features
+Routing: Convention-based (WebApiConfig) or attribute-based ([Route("api/products")]).
+
+Model Binding: Maps HTTP request data to C# objects.
+
+Return Types: Supports HttpResponseMessage, IHttpActionResult, or direct object serialization.
+
+Filters: For authentication, authorization, logging, and exception handling.
+
+Dependency Injection: Built-in support for IoC containers.
+
+Versioning: Supports multiple API versions.
+
+Security: Token-based authentication, OAuth, cookie-based authentication.
+
+Typical Workflow
+Define Controller: Inherit from ApiController.
+
+Create Endpoints: Methods like GetAll(), GetById(), Post(), Put(), Delete().
+
+Return JSON: By default, Web API uses Json.NET for serialization.
+
+Consume API: Clients call endpoints via AJAX, Angular, React, or other frameworks.
+
+Example
+csharp
+public class ProductsController : ApiController
+{
+    [HttpGet]
+    public IEnumerable<Product> GetAll()
+    {
+        return productRepository.GetAll();
+    }
+
+    [HttpPost]
+    public IHttpActionResult Create(Product product)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        productRepository.Add(product);
+        return Ok(product);
+    }
+}
+🎯 25 Web API Interview Questions with Answers
+What is ASP.NET Web API?  
+→ A framework for building HTTP services that support RESTful architecture and return JSON/XML.
+
+Difference between Web API and WCF?  
+→ WCF is heavy and supports multiple protocols (TCP, Named Pipes), while Web API is lightweight and designed for HTTP/REST.
+
+Difference between ApiController and Controller?  
+→ ApiController is specialized for REST APIs, automatically serializes data, and supports HTTP verbs. Controller is for MVC views.
+
+How does Web API handle JSON serialization?  
+→ By default, it uses Json.NET to serialize objects into JSON.
+
+What is content negotiation?  
+→ The process where Web API decides whether to return JSON, XML, or another format based on client request headers.
+
+How do you configure routing in Web API?  
+→ Through WebApiConfig.cs (convention-based) or attribute routing ([Route("api/products")]).
+
+Difference between attribute routing and convention-based routing?  
+→ Convention-based uses templates in WebApiConfig, attribute routing uses [Route] directly on methods.
+
+Common return types in Web API?  
+→ HttpResponseMessage, IHttpActionResult, or direct object serialization.
+
+How do you return custom HTTP status codes?  
+→ Using Request.CreateResponse(HttpStatusCode.BadRequest, "Error") or return StatusCode(HttpStatusCode.NotFound).
+
+Difference between HttpResponseMessage and IHttpActionResult?  
+→ HttpResponseMessage gives full control over response, IHttpActionResult is simpler and more testable.
+
+How do you secure Web API?  
+→ Using token-based authentication, OAuth, JWT, or API keys.
+
+What is CORS and how do you enable it?  
+→ Cross-Origin Resource Sharing allows requests from different domains. Enable via EnableCors attribute.
+
+How do you implement dependency injection in Web API?  
+→ Using IoC containers like Unity, Autofac, or built-in DI in ASP.NET Core.
+
+Difference between GET, POST, PUT, DELETE?  
+→ GET = read, POST = create, PUT = update, DELETE = remove.
+
+How do you handle exceptions globally?  
+→ Using ExceptionFilterAttribute or GlobalConfiguration.Configuration.Filters.
+
+Role of filters in Web API?  
+→ Used for cross-cutting concerns like logging, authentication, and error handling.
+
+How do you implement paging and sorting?  
+→ By adding query parameters (?page=1&pageSize=10) and handling them in controller logic.
+
+How do you refresh data (refresh=true scenario)?  
+→ By passing query parameters (api/products?refresh=true) and reloading data from the database.
+
+How do you implement GetAll() and GetById()?  
+→ GetAll() returns all records, GetById(int id) returns a single record by ID.
+
+How do you return JSON explicitly?  
+→ Use return Json(data); or configure GlobalConfiguration.Formatters.JsonFormatter.
+
+Difference between synchronous and asynchronous Web API calls?  
+→ Async (Task<IHttpActionResult>) improves scalability by freeing threads during I/O operations.
+
+How do you enable versioning?  
+→ Using query string (?v=1), URL (api/v1/products), or custom headers.
+
+How do you test Web API endpoints?  
+→ Using Postman, Swagger, or Fiddler.
+
+Difference between FromBody and FromUri?  
+→ FromBody binds data from request body, FromUri binds from query string.
+
+How do you integrate Web API with Angular/React?  
+→ By making AJAX/Fetch/HttpClient calls to API endpoints and handling JSON responses.
